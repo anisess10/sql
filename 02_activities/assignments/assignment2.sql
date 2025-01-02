@@ -220,7 +220,7 @@ When you have all of these components, you can run the update statement. */
 ALTER TABLE product_units
 ADD current_quantity INT;
 
-
+/**/
 update product_units 
 set current_quantity = (
 	select COALESCE(vi.quantity, 0)
@@ -231,4 +231,5 @@ set current_quantity = (
 		from vendor_inventory  as vi2 
 		where vi2.product_id = product_units.product_id)
 		) ;
+
 

@@ -45,18 +45,23 @@ There are several tools online you can use, I'd recommend [Draw.io](https://www.
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
 
+
+![ERD Promp1](Pormpt1.png)
+
+
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
-
+![ERD Promp2](Prompt2.png)
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
 
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
-```
-Your answer...
-```
+type1 dimension: simply updates the address when changes occur, overwriting the previous value. the CUSTOMER_ADDRESS table will have a one to one relationship in this case ,
+Type2_dimension: we would have to add a column to the  CUSTOMER_ADDRESS  representing the potential change of the customer address in this case, we can address this by adding iscurrent column (bolean type) to the CUSTOMER_ADDRESS table. The relationship in this case has to one-to-many relationship between Customer and CUSTOMER_ADDRESS table ensuring flexibility for handling multiple addresses per customer. (Please image below)
 
+```
+![ERD Promp3](Prompt3.png)
 ***
 
 ## Section 2:
